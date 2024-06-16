@@ -10,7 +10,7 @@ const Counter = () => {
     <div className="flex flex-col items-center justify-center w-full h-full">
       <span>Productos en el carrito de compra</span>
 
-      <CartCounter />
+      <CartCounter value={10}/>
     </div>
   );
 };

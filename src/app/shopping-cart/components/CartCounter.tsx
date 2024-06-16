@@ -2,8 +2,12 @@
 
 import { useState } from "react";
 
-const CartCounter = () => {
-  const [counter, setCounter] = useState(10);
+interface CartCounterProps {
+  value?: number;
+}
+
+const CartCounter = ({ value = 10 }: CartCounterProps) => {
+  const [counter, setCounter] = useState(value);
 
   const handlerCounter = (value: number) => {
     setCounter(counter + value);

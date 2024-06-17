@@ -1,2 +1,2 @@
-export * from "./pokemons-response"
-export * from "./simple-pokemon"
+export type { PokemonsResponse } from "./pokemons-response";
+export type { SimplePokemon } from "./simple-pokemon";

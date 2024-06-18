@@ -10,8 +10,7 @@ const PokemonGrid = ({ pokemons }: Props) => {
   return (
     <div className="flex flex-wrap gap-10 items-center justify-center">
       {pokemons.map((poke) => (
-        
-        <PokemonCard key={poke.id}/> 
+        <PokemonCard key={poke.id} pokemon={poke} />
       ))}
     </div>
   );
@@ -19,10 +18,3 @@ const PokemonGrid = ({ pokemons }: Props) => {
 
 export default PokemonGrid;
 
-{/* <Image
-          key={poke.id}
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png`}
-          width={100}
-          height={100}
-          alt={poke.name}
-        /> */}

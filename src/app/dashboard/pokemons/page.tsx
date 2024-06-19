@@ -1,5 +1,4 @@
 import { PokemonsResponse, SimplePokemon } from "@/app/interfaces";
-import Image from "next/image";
 import PokemonGrid from "./components/PokemonGrid";
 
 const getPokemons = async (
@@ -14,7 +13,7 @@ const getPokemons = async (
     id: pokemon.url.split("/").at(-2)!,
     name: pokemon.name,
   }));
-
+  console.log(pokemons);
   return pokemons;
 };
 

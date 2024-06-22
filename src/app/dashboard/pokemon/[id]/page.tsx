@@ -10,19 +10,27 @@ interface Props {
   };
 }
 
+export async function generateStaticParams() {
+  const static151Pokemons = Array.from({ length: 151 }).map((_, i) => ({
+    id: `${i + 1}`
+  }));
+  console.log(static151Pokemons)
+  return static151Pokemons;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
     const { id, name } = await getPokemon(params.id);
 
-  return {
-    title: `#${id} - ${name}`,
-    description: `Pagina del pokémon ${name}`,
-  };
+    return {
+      title: `#${id} - ${name}`,
+      description: `Pagina del pokémon ${name}`,
+    };
   } catch (error) {
     return {
       title: "Página del pokémon",
-      description: "Descripcion del pokémon"
-    }
+      description: "Descripcion del pokémon",
+    };
   }
 }
 
@@ -31,10 +39,10 @@ const getPokemon = async (id: string): Promise<DetailPokemon> => {
     const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, {
       cache: "force-cache",
     }).then((res) => res.json());
-  
+
     return pokemon;
   } catch (error) {
-    notFound()
+    notFound();
   }
 };
 

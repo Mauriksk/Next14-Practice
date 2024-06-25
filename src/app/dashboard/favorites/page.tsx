@@ -1,10 +1,9 @@
 import PokemonGrid from "../pokemons/components/PokemonGrid";
 
 export const metadata = {
-    title: "Favoritos",
-    description: "Pokemons favortios",
-  };
-  
+  title: "Favoritos",
+  description: "Pokemons favortios",
+};
 
 const PokemonsPage = async () => {
   return (

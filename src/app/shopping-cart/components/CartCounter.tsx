@@ -7,11 +7,9 @@ interface CartCounterProps {
 }
 
 const CartCounter = ({ value = 10 }: CartCounterProps) => {
-  const [counter, setCounter] = useState(value);
 
-  const handlerCounter = (value: number) => {
-    setCounter(counter + value);
-  };
+
+ 
   return (
     <>
       <span className="text-9xl">{counter}</span>
